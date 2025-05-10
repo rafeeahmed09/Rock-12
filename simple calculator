@@ -1,0 +1,84 @@
+#include<stdio.h>
+#include<math.h>
+#include<limits.h>
+int main()
+{
+    int choice; // variable to store the user 's choice.
+    int first, second, result;
+    double result1;
+    
+     while (1)
+   {
+        printf("\n-------simple calculator-------\n");
+        printf("1.Addition\n");
+        printf("2.Subtraction\n");
+        printf("3.Multiplication\n");
+        printf("4.Division \n");
+        printf("5.Modulus\n");
+        printf("6.Power\n");
+        printf("7.Exit\n");
+        printf("choose an operation (1-7) :");
+        scanf("%d", &choice);
+
+        if (choice == 7){
+            printf("Exting the calculator. goodbye \n");
+            break;
+        }
+        if (choice < 1 || choice > 7){
+            printf("Invalid choice. try again.\n");
+            continue;
+        }
+        printf("Enter first number : ");
+        scanf("%d", &first);   
+        printf("Enter second number : ");
+        scanf("%d", &second);
+    
+     
+         switch (choice)
+       {
+            case 1: // addition
+            result = first + second;
+            printf("%d + %d = %d\n", first, second,   result);
+            
+            break;
+             case 2: // subtraction
+                 result = first - second;
+                printf("%d - %d = %d\n",first, second, result);
+                break;
+            case 3: // Multiplication
+                result = first * second;
+                printf("%d * %d = %d\n",first, second, result);;
+                break;
+           case 4: // Division
+                 if (first == 0 || second == 0){
+                    printf("Error : Division by Zero is not allowed \n");
+                 }
+                 else{
+                    result = (double) first / second;
+                    printf("%d / %d = %.2f\n",first, second, result1);
+                 }
+                    break;
+            case 5: // Modulus
+            
+            if (first == 0 || second == 0) {
+                printf("Error: Modulus by zero is not allowed.\n");
+            } else {
+                result = first % second;
+                printf("%d %%  %d = %d\n",first, second, result);
+            }
+            break;
+            case 6: // power 
+                result1 = pow(first, second);
+                printf("%d ^ %d = %d\n",first, second, result1);
+                break;
+                 
+            default:
+            printf("unexpected error\n");
+            break;
+            
+        }
+   }
+    
+
+        return 0;
+    }
